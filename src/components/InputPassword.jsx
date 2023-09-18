@@ -7,8 +7,7 @@ import {
   StyleSheet,
 } from "react-native";
 
-const InputPassword = () => {
-  const [password, setPassword] = useState("");
+const InputPassword = ({ value, onChangeText }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
 
@@ -21,8 +20,8 @@ const InputPassword = () => {
       <TextInput
         style={[styles.input, isFocused && styles.focusedInput]}
         secureTextEntry={!showPassword}
-        value={password}
-        onChangeText={setPassword}
+        value={value}
+        onChangeText={onChangeText}
         placeholder="Пароль"
         autoCapitalize="none"
         onFocus={() => setIsFocused(true)}

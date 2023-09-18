@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Alert } from "react-native";
 
 import InputField from "./InputField";
 import FormButton from "./FormButton";
@@ -9,9 +9,19 @@ import Link from "./Link";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmit = () => {
-    // Отримайти дані форми
+    if (!email || !password) {
+      Alert.alert("Будь ласка, заповніть всі поля форми!");
+      return;
+    }
+
+    console.log(email);
+    console.log(password);
+
+    setEmail("");
+    setPassword("");
   };
 
   return (
@@ -22,8 +32,11 @@ const LoginForm = () => {
         placeholder="Адреса електронної пошти"
         onChangeText={setEmail}
       ></InputField>
-      <InputPassword></InputPassword>
-      <FormButton text="Увійти"></FormButton>
+      <InputPassword
+        value={password}
+        onChangeText={setPassword}
+      ></InputPassword>
+      <FormButton text="Увійти" onPress={handleSubmit}></FormButton>
       <View style={styles.linkContainer}>
         <Link text="Немає акаунту? Зареєструватися"></Link>
       </View>

@@ -1,21 +1,30 @@
 import React from "react";
-import { StyleSheet, View, KeyboardAvoidingView } from "react-native";
+import {
+  StyleSheet,
+  View,
+  KeyboardAvoidingView,
+  Platform,
+  TouchableWithoutFeedback,
+  Keyboard,
+} from "react-native";
 
 import Avatar from "../components/Avatar";
 import RegisterForm from "../components/RegisterForm";
 
 const RegistrationScreen = () => {
   return (
-    <KeyboardAvoidingView
-      behavior={Platform.OS === "ios" ? "padding" : null}
-      keyboardVerticalOffset={Platform.OS === "ios" ? -200 : 0}
-      style={styles.container}
-    >
-      <View style={styles.avatar}>
-        <Avatar />
-      </View>
-      <RegisterForm style={styles.form} />
-    </KeyboardAvoidingView>
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      <KeyboardAvoidingView
+        behavior={Platform.OS === "ios" ? "padding" : null}
+        keyboardVerticalOffset={Platform.OS === "ios" ? -100 : 0}
+        style={styles.container}
+      >
+        <View style={styles.avatar}>
+          <Avatar />
+        </View>
+        <RegisterForm style={styles.form} />
+      </KeyboardAvoidingView>
+    </TouchableWithoutFeedback>
   );
 };
 

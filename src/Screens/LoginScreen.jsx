@@ -1,17 +1,25 @@
 import React from "react";
-import { StyleSheet, KeyboardAvoidingView } from "react-native";
+import {
+  StyleSheet,
+  KeyboardAvoidingView,
+  Platform,
+  TouchableWithoutFeedback,
+  Keyboard,
+} from "react-native";
 
 import LoginForm from "../components/LoginUserForm";
 
 const LoginScreen = () => {
   return (
-    <KeyboardAvoidingView
-      behavior={Platform.OS === "ios" ? "padding" : null}
-      keyboardVerticalOffset={Platform.OS === "ios" ? -500 : 0}
-      style={styles.container}
-    >
-      <LoginForm></LoginForm>
-    </KeyboardAvoidingView>
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      <KeyboardAvoidingView
+        behavior={Platform.OS === "ios" ? "padding" : null}
+        keyboardVerticalOffset={Platform.OS === "ios" ? -500 : 0}
+        style={styles.container}
+      >
+        <LoginForm></LoginForm>
+      </KeyboardAvoidingView>
+    </TouchableWithoutFeedback>
   );
 };
 

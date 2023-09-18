@@ -1,10 +1,12 @@
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
-const FormButton = ({ text }) => {
+const FormButton = ({ text, onPress }) => {
   return (
     <TouchableOpacity style={styles.button}>
-      <Text style={styles.buttonText}>{text}</Text>
+      <Text style={styles.buttonText} onPress={onPress}>
+        {text}
+      </Text>
     </TouchableOpacity>
   );
 };
