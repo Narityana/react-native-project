@@ -7,8 +7,7 @@ import InputPassword from "./InputPassword";
 import Title from "./Title";
 import Link from "./Link";
 
-const RegisterForm = () => {
-  const [login, setLogin] = useState("");
+const LoginForm = () => {
   const [email, setEmail] = useState("");
 
   const handleSubmit = () => {
@@ -17,22 +16,16 @@ const RegisterForm = () => {
 
   return (
     <View style={styles.container}>
-      <Title title="Реєстрація"></Title>
-      <InputField
-        value={login}
-        placeholder="Логін"
-        onChangeText={setLogin}
-      ></InputField>
+      <Title title="Увійти"></Title>
       <InputField
         value={email}
         placeholder="Адреса електронної пошти"
         onChangeText={setEmail}
       ></InputField>
       <InputPassword></InputPassword>
-      <FormButton text="Зареєструватися"></FormButton>
+      <FormButton text="Увійти"></FormButton>
       <View style={styles.linkContainer}>
-        <Text style={styles.linkSubtitle}>Вже є акаунт?</Text>
-        <Link text="Увійти"></Link>
+        <Link text="Немає акаунту? Зареєструватися"></Link>
       </View>
     </View>
   );
@@ -40,22 +33,19 @@ const RegisterForm = () => {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 92,
+    paddingTop: 32,
     paddingHorizontal: 16,
     backgroundColor: "#FFFFFF",
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
   },
   linkContainer: {
-    marginBottom: 45,
+    marginBottom: 111,
     marginTop: 16,
     flexDirection: "row",
     justifyContent: "center",
     gap: 5,
   },
-  linkSubtitle: {
-    color: "#1B4371",
-  },
 });
 
-export default RegisterForm;
+export default LoginForm;

@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, KeyboardAvoidingView } from "react-native";
 
-import LoginForm from "../src/components/LoginUserForm";
+import LoginForm from "../components/LoginUserForm";
 
 const LoginScreen = () => {
   return (

@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
   },
   focusedInput: {
     borderColor: "#FF6C00",
+    backgroundColor: "#FFFFFF",
   },
 });
 

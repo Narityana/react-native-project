@@ -4,16 +4,15 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View } from "react-native";
 
 import Background from "./src/components/Background";
-import RegistrationScreen from "./Screens/RegistrationScreen";
-import LoginForm from "./src/components/LoginUserForm";
-import LoginScreen from "./Screens/LoginScreen";
+import RegistrationScreen from "./src/Screens/RegistrationScreen";
+import LoginScreen from "./src/Screens/LoginScreen";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
-    "Roboto-Black": require("./assets/fonts/Roboto-Black.ttf"),
-    "Roboto-Bold": require("./assets/fonts/Roboto-Bold.ttf"),
-    "Roboto-Medium": require("./assets/fonts/Roboto-Medium.ttf"),
-    "Roboto-Regular": require("./assets/fonts/Roboto-Regular.ttf"),
+    "Roboto-Black": require("./src/assets/fonts/Roboto-Black.ttf"),
+    "Roboto-Bold": require("./src/assets/fonts/Roboto-Bold.ttf"),
+    "Roboto-Medium": require("./src/assets/fonts/Roboto-Medium.ttf"),
+    "Roboto-Regular": require("./src/assets/fonts/Roboto-Regular.ttf"),
   });
 
   if (!fontsLoaded) {
@@ -22,8 +21,8 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Background>
-        {/* <RegistrationScreen></RegistrationScreen> */}
-        <LoginScreen />
+        <RegistrationScreen />
+        {/* <LoginScreen /> */}
         <StatusBar style="auto" />
       </Background>
     </View>

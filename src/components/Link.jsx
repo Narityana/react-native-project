@@ -4,9 +4,7 @@ import { StyleSheet, Text, TouchableOpacity } from "react-native";
 const Link = ({ text, onPress }) => {
   return (
     <TouchableOpacity onPress={onPress}>
-      <Text style={styles.link} selectable={false}>
-        {text}
-      </Text>
+      <Text style={styles.link}>{text}</Text>
     </TouchableOpacity>
   );
 };

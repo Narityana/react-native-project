@@ -24,6 +24,7 @@ const InputPassword = () => {
         value={password}
         onChangeText={setPassword}
         placeholder="Пароль"
+        autoCapitalize="none"
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
       />
@@ -48,6 +49,7 @@ const styles = StyleSheet.create({
   },
   focusedInput: {
     borderColor: "#FF6C00",
+    backgroundColor: "#FFFFFF",
   },
   toggleButton: {
     position: "absolute",

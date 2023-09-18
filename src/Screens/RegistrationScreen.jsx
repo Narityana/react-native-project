@@ -1,8 +1,8 @@
 import React from "react";
 import { StyleSheet, View, KeyboardAvoidingView } from "react-native";
 
-import Avatar from "../src/components/Avatar";
-import RegisterForm from "../src/components/RegisterForm";
+import Avatar from "../components/Avatar";
+import RegisterForm from "../components/RegisterForm";
 
 const RegistrationScreen = () => {
   return (
@@ -29,8 +29,10 @@ const styles = StyleSheet.create({
   avatar: {
     position: "absolute",
     bottom: 456,
-    left: "50%",
-    transform: [{ translateX: -66 }],
+    // top: 200,
+    alignSelf: "center",
+    // left: "50%",
+    // transform: [{ translateX: -66 }],
     zIndex: 5,
   },
 });
