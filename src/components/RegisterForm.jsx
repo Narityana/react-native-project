@@ -53,6 +53,7 @@ const RegisterForm = () => {
 
 const styles = StyleSheet.create({
   container: {
+    position: "relative",
     paddingTop: 92,
     paddingHorizontal: 16,
     backgroundColor: "#FFFFFF",
@@ -65,6 +66,13 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     gap: 5,
+  },
+  avatar: {
+    position: "absolute",
+
+    top: -60,
+    alignSelf: "center",
+    zIndex: 5,
   },
 });
 

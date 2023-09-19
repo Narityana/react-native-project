@@ -13,7 +13,6 @@ const Background = ({ children }) => {
 const styles = StyleSheet.create({
   image: {
     flex: 1,
-    justifyContent: "flex-end",
     width: "100%",
   },
 });

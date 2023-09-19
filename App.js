@@ -1,3 +1,7 @@
+// import "react-native-gesture-handler";
+// import { NavigationContainer } from "@react-navigation/native";
+// import { createStackNavigator } from "@react-navigation/stack";
+
 import { useFonts } from "expo-font";
 
 import { StatusBar } from "expo-status-bar";
@@ -18,7 +22,16 @@ export default function App() {
   if (!fontsLoaded) {
     return null;
   }
+
+  // const MainStack = createStackNavigator();
+
   return (
+    // <NavigationContainer>
+    //   <MainStack.Navigator initialRouteName="Registration">
+    //     <MainStack.Screen name="Registration" component={RegistrationScreen} />
+    //     <MainStack.Screen name="Login" component={LoginScreen} />
+    //     {/* <MainStack.Screen name="Home" component={Home} /> */}
+    //   </MainStack.Navigator>
     <View style={styles.container}>
       <Background>
         <RegistrationScreen />
@@ -26,6 +39,7 @@ export default function App() {
         <StatusBar style="auto" />
       </Background>
     </View>
+    // </NavigationContainer>
   );
 }
 
